@@ -9,7 +9,7 @@
 для дева запускать:
 ```npm run dev```
 Продакшен:
-```npm run start
+```npm run start```
 
 ## Автор
 
