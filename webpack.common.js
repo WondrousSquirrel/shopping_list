@@ -6,6 +6,13 @@ const outputDir = 'dist';
 
 module.exports = {
     entry: './client/index.js',
+    plugins: [
+        new CleanWebpackPlugin([outputDir]),
+        new HtmlWebpackPlugin({
+            template: './public/template.html',
+            favicon: './public/favicon.ico'
+        })
+    ],
     output: {
         path: path.join(__dirname, outputDir),
         filename: '[name].bundle.js'
@@ -33,19 +40,5 @@ module.exports = {
             }
 
         ]
-    },
-    devServer: {
-        port: 3000,
-        open: true,
-        proxy: {
-            '/api': 'http://localhost:5000'
-        }
-    },
-    plugins: [
-        new CleanWebpackPlugin([outputDir]),
-        new HtmlWebpackPlugin({
-            template: './public/template.html',
-            favicon: './public/favicon.ico'
-        })
-    ]
-};
+    }
+}

@@ -5,9 +5,9 @@
   "main": "server.js",
   "scripts": {
     "server": "nodemon server/server.js",
-    "client": "webpack-dev-server --hot",
+    "client": "webpack-dev-server --config webpack.dev.js --hot ",
     "dev": "concurrently 'npm run server' 'npm run client'",
-    "build": "webpack --mode production",
+    "build": "webpack --config webpack.prod.js",
     "start": "npm run build && node server/server.js"
   },
   "keywords": [
@@ -40,7 +40,8 @@
     "url-loader": "^1.1.2",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9"
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
   },
   "dependencies": {
     "dotenv": "^6.1.0",
